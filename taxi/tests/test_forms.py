@@ -1,5 +1,8 @@
 from django.test import TestCase
-from taxi.forms import DriverCreationForm, DriverUsernameSearchForm
+from taxi.forms import (
+    DriverCreationForm,
+    DriverUsernameSearchForm,
+)
 
 
 class DriverCreationFormTest(TestCase):
@@ -16,6 +19,8 @@ class DriverCreationFormTest(TestCase):
         self.assertTrue(form.is_valid())
         self.assertEqual(form.cleaned_data, form_data)
 
+
+class SearchFormTest(TestCase):
     def test_driver_username_search_form_is_valid(self):
         form_data = {"username": "test"}
         form = DriverUsernameSearchForm(data=form_data)
